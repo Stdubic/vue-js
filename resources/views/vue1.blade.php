@@ -13,11 +13,11 @@
         </div>
         <div id="app">
 
-        <form action="done.html" v-on:submit.prevent = 'handleIt'>
-                  <button type="submit" >
-                  Send message
+
+                  <button type="submit" v-on:click= "updateCount" >
+                        Increment Counter: @{{ count }}
                   </button>
-        </form>
+
         <pre>
             @{{ $data | json }}
         </pre>
@@ -34,16 +34,14 @@
         new Vue({
             el:'#app',
             data: {
-                message: ''
+                count: 0
             },
-            methods:{
-                handleIt: function(){
-                    alert('Heandled');
-
-
+            methods: {
+                updateCount: function(){
+                    this.count +=1;
                 }
-
             }
+
         });
 
     </script>
