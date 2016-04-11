@@ -14,5 +14,5 @@
 Route::get('/', function () {
     $test = ['bla', 'lele', 'test'];
 
-    return view('vue3', compact('test'));
+    return view('vue4', compact('test'));
 });
