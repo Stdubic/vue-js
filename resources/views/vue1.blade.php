@@ -24,7 +24,7 @@
 
         </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.js"></script>
 
     <script>
         var data = {
