@@ -13,23 +13,38 @@
                 <div class="title">{{ $test[1] }}</div>
             </div>
 
+
         </div>
+
+
         <div id="app">
-
-            <ul>
-                <li :class="{ 'completed': task.completed }"
-                    v-for="task in tasks"
-                    v-on:click= " task.completed = ! task.completed"
-                    >
-                    @{{ task.body }}
-                </li>
-            </ul>
-
+            <tasks :list="tasks"></tasks>
         </div>
+
+                    <template id="tasks-template">
+
+                        <ul>
+                            <li :class="{ 'completed': task.completed }"
+                                v-for="task in list"
+                                v-on:click= " task.completed = ! task.completed"
+                                >
+                                @{{ task.body }}
+                            </li>
+                        </ul>
+
+                    </template>
+
+
              <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.20/vue.js"></script>
 
     <script>
 
+        Vue.component('tasks',{
+
+            props:['list'],
+
+            template:'#tasks-template'
+        });
 
         new Vue({
             el:'#app',
