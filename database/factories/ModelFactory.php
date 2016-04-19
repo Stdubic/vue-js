@@ -18,4 +18,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
+
+
+
+});
+$factory->define(App\Auctions::class, function (Faker\Generator $faker) {
+    return [
+
+        'title'        => $faker->name,
+        'price'         => $faker->numberBetween(10000, 5000000),
+        'description'   => $faker->paragraphs(3,true)
+
+    ];
+
 });

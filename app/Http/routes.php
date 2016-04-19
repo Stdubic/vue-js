@@ -11,8 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    $test = ['bla', 'lele', 'test'];
 
-    return view('vue6', compact('test'));
+
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/', function () {
+        $test = \App\Auctions::all();
+
+
+        return view('ajax-form', compact('test'));
+    });
+    Route::delete('/auctions/{auctions}', function(App\Auctions $auctions){
+        $auctions->delete();
+    });
+
 });
